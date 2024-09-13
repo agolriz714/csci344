@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    
+    
+}
+.card{
+    
+}
+.card,img{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: start;
+    border-style: solid;
+    border-color: lightgrey;
+    width: 500px;
+   /* height: 190px; */
+   line-height: 25px;
+}
+.card>p{
+    justify-items: left;
+    
+}
+p{
+    color:rgb(160, 158, 158);
+    margin-left: 20px;
+    
+}
+h2{
+    margin-left: 20px;
+}
+span{
+    margin-left: 20px;
+  
+    
+}
+img{
+width: 150px;
+margin-top: 15px;
+margin-left: 40px;
+height: 150px;
+border-color: transparent;
+
+}

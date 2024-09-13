@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(199, 194, 194);   
+}
+header{
+    padding-left: 20px;
+    font-size: 25px;
+}
+/* Rules below is for top bar includes current user and abilitty to sign out */
+div{
+    background-color: white;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    position: fixed;
+    width: 100%;
+    
+}
+.main-nav{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding-right:20px;
+}
+ nav{
+    margin: 5px;
+}
+.nav-exit{
+    color: #0095F6;
+    font-weight:100;
+}
+/* below is the rule set for the current user, ads well as recommended*/
+.rec-bar{
+    display: grid;
+    flex-shrink: 0;
+    margin-top: 40px;
+    background: transparent;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto;
+    width: 100%;
+}
+.curr-user{
+    grid-column:2;
+}
+.profile-pic{
+   align-items: flex-end;
+}
+
+
+
+
+
+

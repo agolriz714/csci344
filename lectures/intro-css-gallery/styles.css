@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(244, 241, 241);
+}
+header{
+    background-color: yellow;
+    padding: 40px;
+}
+section{
+    border-width: 1px;
+    background-color: white;
+    /* border-style: solid; */
+    display: inline-block;
+    margin: 30px;
+    /* padding: 20px; */
+    
+
+}
+section > p{
+    background-color: white;
+   
+   
+}
+/* Your code here */
