@@ -5,21 +5,20 @@ main{
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 20px;
-    
-    
 }
 .card{
     
 }
-.card,img{
+.card{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto 200px;
     align-items: start;
     border-style: solid;
     border-color: lightgrey;
-    width: 500px;
+    /* width: 500px; */
    /* height: 190px; */
-   line-height: 25px;
+   /* line-height: 25px; */
+   padding: 20px;
 }
 .card>p{
     justify-items: left;
