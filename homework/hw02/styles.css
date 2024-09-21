@@ -1,53 +1,390 @@
-body{
-    background-color: rgb(199, 194, 194);   
+body * {
+    box-sizing: border-box;
 }
-header{
-    padding-left: 20px;
-    font-size: 25px;
+
+body {
+    margin: 0;
+    background: #F4F4F4;
+    font-family: Arial, Helvetica, sans-serif;
 }
-/* Rules below is for top bar includes current user and abilitty to sign out */
-div{
+
+
+header,
+main,
+section,
+article,
+nav,
+.logo {
+    border: solid 2px #CCC;
+    padding: 10px;
+    margin: 10px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight:400;
+    border: none;
+}
+
+aside,
+body>header,
+main,
+.news-feed {
+    /* border: solid 4px #000; */
+    padding: 10px;
+    margin: 10px;
+}
+
+main{
+    border: none;
+}
+
+
+article{
+    min-height: 300px;
+}
+/* Rules for top logo app area */
+#top-header{
     background-color: white;
-    height: 40px;
+    position:fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    margin:0;
     display: flex;
     justify-content: space-between;
-    padding-top: 15px;
+}
+#user-top{
+    
+    height: 0px;
+   border: none;
+}
+p{
+float: left;
+margin-top: 5px;
+margin-right: 10px;
+}
+#out{
+    float: left;
+    margin-top: 5px;
+    color: #4c68d7;
+}
+/* Rules below for right side suggesttions */
+aside{
+    margin: 0;
+    right:1vw;
     position: fixed;
-    width: 100%;
+    width: 40vw;  
+    background: #F4F4F4;
+    top:100px
+}
+#sugg-user{
+    border:none;
+}
+#main-pic{
+    float:left;
+    margin-right: 20px;
+    border-radius: 40px;
+}
+h2{
+    font-size: 40px;
+    margin-top: 12px;
+}
+h3{
+    font-size: 20px;
+    color: rgb(104, 102, 102);
+    margin-top: -18px;
+}
+#big-sugg-text{
+    border: none;
+}
+#sugg-users{
+    display: grid;
+    height: 55vh;
+    grid-template-columns: 80px auto 80px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap:2px
+    
     
 }
-.main-nav{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   padding-right:20px;
+.rec-user{
+    border: none;
+    margin-top: -30px;
+    grid-column: 1;
+    display: flex;
+    justify-content: left;
+    height: 9vh;
+    width:38vw
+  
 }
- nav{
-    margin: 5px;
+.sugg-profile{
+    width: 4vw;
+    border: none;
 }
-.nav-exit{
-    color: #0095F6;
-    font-weight:100;
+.sugg-text{
+    width: 15vw;
+    border: none;
+    margin-left: -30px;
 }
-/* below is the rule set for the current user, ads well as recommended*/
-.rec-bar{
+.sugg-pics{
+    margin-left: -20px;
+    border-radius: 20px;
+}
+.friend{
+    font-size: 20px;
+    margin: 0;
+}
+.sugg-pics{
+    float: left;
+}
+.sugg-button{
+    border: none;
+    margin:30px;
+    margin-left: -20px;
+    
+}
+.follow{
+    border: none;
+    background-color: transparent;
+    color: #4c68d7;
+    font-size: 15px;
+}
+
+
+
+
+
+/* Rules below is for story section */
+#story{
+    height: auto;
+    display: grid; 
+    grid-template-columns: repeat(5,70px) ;
+    grid-template-rows: 60px 22px;
+    border: none;
+    background-color: white;
+    justify-items: left;
+    
+
+}
+.story-nav{
+    border: none;
     display: grid;
-    flex-shrink: 0;
-    margin-top: 40px;
-    background: transparent;
-    grid-template-columns: 80% 20%;
-    grid-template-rows: auto;
-    width: 100%;
-}
-.curr-user{
-    grid-column:2;
-}
-.profile-pic{
-   align-items: flex-end;
+    justify-content: space-evenly;
+    grid-template-rows: 1fr auto;
+    margin-right: -15px;
+    
 }
 
+.story{
+    border-radius: 40px;
+    height: 50px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: gray;
+    margin-top: -15px;
+   
+    grid-row: 1;
+}
+.user-story{
+    font-size: 10px;
+   grid-row: 2;
+   text-align: right;
+   
+    
+}
+/* Rules below for main post area  */
+/* For the card that holds the user name and the 3 dots  */
+/* This post class is for the whole thing */
+.posts{
+    border: none;
+    margin-bottom: 50px;
+    background-color: white;
+    height: 106vh
+    
+    
+
+}
+.user-name-post{ 
+    display: flex;
+    border: none;
+    margin: 0;
+    margin-top: -13px;
+    margin-left: -11px;
+
+    padding: 0;
+    height: 8vh;
+    width:51.5vw;
+    justify-content: space-between;
+}h4{
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 15px;
+    float: left;
+}
+/* icons start here  */
+#post-body{
+    border: none;
+    width: 50w;
+    display: grid;
+    margin-left: -40px;
+    justify-content: space-between;
+}
+#icons{
+    width: 51.5vw;
+    display: grid;
+    justify-content: space-between;
+    border: none;
+    grid-template-columns: 1fr 1fr;
+}
+#interact{
+ grid-column: 1;   
+ display: flex;
+ 
+}
+#heart, #comment, #plane{
+    padding-right: 20px;
+}
+#more{
+    font-size: 20px;
+    margin-top: 17px;
+    margin-right: 10px;
+}
+
+#books{
+    /* margin-top: 22px; */
+    display: flex;
+    justify-content: end;
+}
+.sidebar{
+    font-size: 20px;
+}
+#likes{
+    display: flex;
+   width: 51.5vw;
+}
+#like-font{
+    font-size: 19px;
+    color: rgb(64, 64, 64);
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+
+
+/* Icons end here */
+/* Rules for comments below */
+.comment-user{
+    font-size: 15px;
+    margin-left:20px ;
+    margin-top: -10px;
+    float: left;
+}
+
+.typed-comment{
+    width: 30vw;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: -10px;
+}
+.morestuff{
+    margin-top: 7px;
+    font-size: 15px;
+    margin-left: -160px;
+    border: none;
+    background-color: transparent;
+    color: #4c68d7;
+}
+
+#time-posted{
+    margin-left: 20px;
+    font-size: 11px;
+    margin-top: -18px;
+    color: rgb(81, 81, 81);
+}
+
+#end-comment{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+#left-finals{
+    display: flex;
+    
+    border: none;
+}
+#add{
+    margin-left: 25px;
+    color: rgb(81, 81, 81);
+}
+#smile{
+    margin-top: 1px;
+    font-size: 25px;
+    margin-left:-2px;
+}
+#post-button{
+    border: none;
+    display: flex;
+    justify-content: end;
+}
+#post-more{
+    border: none;
+    background-color: transparent;
+    color: #4c68d7;
+    font-size: 20px;
+}
+/* Comment rules end here */
+/* this post tag is for images only */
+.post{
+    
+    margin-left: -31px;
+    margin-top: -24px;
+    width: 52.2vw; 
+    height: 55vh;
+    
+    
+}
+#posts{
+    border: none;
+}
+article{
+    border: none;
+}
 
 
 
 
+/* rule below is for the enire main post and story area */
+main{
+   
+    margin-top:100px;
+    width: 55vw;
+    margin-left: 5vw;
+}
+/* Below is the rules for mobile sized displays */
 
+
+@media (max-width: 800px) {
+    aside{
+        display: none;
+    }
+    main{
+        /* margin-top:100px ; */
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px;
+    }
+    .post{
+        width: 89vw;
+
+    }
+    .user-name-post{
+        width: 89vw;
+    }
+    #stories{
+        margin-top:100px ;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px;
+    }
+}

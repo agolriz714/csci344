@@ -1,24 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Photo App</title>
-  
+    <title>Insta pot gram thingy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body>
-   <div class="container">
-    <header class="topbar">Photo App</header>
+    <header id="top-header">
+        <h1 class="logo">
+            Photo App
+        </h1>
+        <nav id="user-top">
+            <p id="user">gibsonjack</p>
+            <buttom id="out"> Sign out</button>
+        </nav>
     </header>
-    <section class="main-nav">
-        <nav>agolriz</nav>
-        <nav class="nav-exit">Sign out</nav>
-    </section>
-    <div class="rec-bar">
-        <img class="profile-pic" src="https://picsum.photos/80/80" alt="a random image gen placeholder for photoapp">
-        <h1 class="curr-user">agolriz</h1>
-    </div>
+   
+    <aside>
+        
+        <header id="sugg-user">
+            <img id="main-pic"src="https://picsum.photos/80/80" alt="User profile picture">
+            <h2>gibsonjack</h2>
+        </header>
+        <section id="big-sugg-text" >
+            <h3>Suggestions for you</h3>
+        </section>
+        <div id="sugg-users">
+            <section class="rec-user">
+                <nav class="sugg-profile">
+                     <img class="sugg-pics"src="https://picsum.photos/40/40?random1" alt="Sugg User profile picture">
+                     
+                </nav>
+                <nav class="sugg-text">
+                    <h5 class="friend">amandahudson</h5>
+                    <p class="sugg-gen">Suggested for you</p>
+                </nav>
+                <nav class="sugg-button">
+                    <button class="follow">follow</button>
+                </nav>
+                </section>
+                <section class="rec-user">
+                    <nav class="sugg-profile">
+                         <img class="sugg-pics"src="https://picsum.photos/40/40?random2" alt="Sugg User profile picture">
+                         
+                    </nav>
+                    <nav class="sugg-text">
+                        <h5 class="friend">qthornton</h5>
+                        <p class="sugg-gen">Suggested for you</p>
+                    </nav>
+                    <nav class="sugg-button">
+                        <button class="follow">follow</button>
+                    </nav>
+                    </section>
+                    <section class="rec-user">
+                        <nav class="sugg-profile">
+                             <img class="sugg-pics"src="https://picsum.photos/40/40?random3" alt="Sugg User profile picture">
+                             
+                        </nav>
+                        <nav class="sugg-text">
+                            <h5 class="friend">ynelson</h5>
+                            <p class="sugg-gen">Suggested for you</p>
+                        </nav>
+                        <nav class="sugg-button">
+                            <button class="follow">follow</button>
+                        </nav>
+                        </section>
+                        <section class="rec-user">
+                            <nav class="sugg-profile">
+                                 <img class="sugg-pics"src="https://picsum.photos/40/40?random4" alt="Sugg User profile picture">
+                                 
+                            </nav>
+                            <nav class="sugg-text">
+                                <h5 class="friend">lauralyons</h5>
+                                <p class="sugg-gen">Suggested for you</p>
+                            </nav>
+                            <nav class="sugg-button">
+                                <button class="follow">follow</button>
+                            </nav>
+                            </section>
+                            <section class="rec-user">
+                                <nav class="sugg-profile">
+                                     <img class="sugg-pics"src="https://picsum.photos/40/40?random5" alt="Sugg User profile picture">
+                                     
+                                </nav>
+                                <nav class="sugg-text">
+                                    <h5 class="friend">robertsonkristen</h5>
+                                    <p class="sugg-gen">Suggested for you</p>
+                                </nav>
+                                <nav class="sugg-button">
+                                    <button class="follow">follow</button>
+                                </nav>
+                                </section>
+                
+           
+           
+        </div>
+    </aside>
+    <main> 
+       
+        <section id="story"> 
+            <nav class="story-nav">
+                <img class="story"src="https://picsum.photos/40/40?random6" alt="Story preview">
+                <p class="user-story">gouldhennifer</p>
+            </nav>
+            <nav class="story-nav">
+                <img class="story"src="https://picsum.photos/40/40?random7" alt="Story preview">
+                <p class="user-story">matthew16</p>
+            </nav>
+            <nav class="story-nav">
+                <img class="story"src="https://picsum.photos/40/40?random8" alt="Story preview">
+                <p class="user-story">sanchezjill</p>
+            </nav>
+            <nav class="story-nav">
+                <img class="story"src="https://picsum.photos/40/40?random9" alt="Story preview">
+                <p class="user-story">gloria62</p>
+            </nav>
+            <nav class="story-nav">
+                <img class="story"src="https://picsum.photos/40/40?random10" alt="Story preview">
+                <p class="user-story">jwright</p>
+            </nav>
+
+        </section>
+
+        <section class="posts">
+            
+            <header class="user-name-post">
+                <h4> agolriz</h4>
+                <i id="more" class="fa-solid fa-ellipsis"></i>
+            </header>
+            <article>
+                <img class="post"src="https://picsum.photos/743/350/?random14" alt="User's post">
+                <div id="post-body">
+                    <section id="icons">
+                        <div id="interact">
+                            <i id="heart" class="fa-regular fa-heart sidebar" ></i>
+                            <i id="comment" class="fa-regular fa-comment sidebar " ></i>
+                            <i id="plane" class="fa-regular fa-paper-plane sidebar"></i>
+                       </div>
+                        <div id="books">
+                            <i id="book" class="fa-regular fa-bookmark sidebar"></i>
+                        </div>
+                    </section>
+                    <div id="likes">
+                        <h6 id="like-font">30 likes</h6>
+                    </div>
+                   <div class="comment">
+                    <h6 class="comment-user">gibsonjack</h6>
+                    <p class="typed-comment">Here is a caption abut the photo. Text text text text text text text text text text text text text text text text...</p>
+                    <button class="morestuff">more</button>
+                   </div>
+                   <div class="comment">
+                        <h6 class="comment-user">Lizzie</h6>
+                        <p class="typed-comment">Here is a comment text text text text text text.</p>
+                  </div>
+                  <div class="comment">
+                    <h6 class="comment-user">vanek97</h6>
+                    <p class="typed-comment">Here is another comment text text text.</p>
+                 </div>
+                 <div>
+                    <p id="time-posted" class="typed-commet">
+                        1 DAY AGO
+                    </p>
+                 </div>
+                 <div id="end-comment"> 
+                    <section id="left-finals">
+                        <i id="smile" class="fa-regular fa-face-smile"></i>
+                        <p id="add">Add a comment...</p>
+                    </section>
+                    <section id="post-button">
+                        <button id="post-more">Post</button>
+                    </section>
+
+                 </div>
+
+            </article>
+            </section>
+            <section class="posts">
+            
+                <header class="user-name-post">
+                    <h4> agolriz</h4>
+                    <i id="more" class="fa-solid fa-ellipsis"></i>
+                </header>
+                <article>
+                    <img class="post"src="https://picsum.photos/743/350/?random10" alt="User's post">
+                    <div id="post-body">
+                        <section id="icons">
+                            <div id="interact">
+                                <i id="heart" class="fa-regular fa-heart sidebar" ></i>
+                                <i id="comment" class="fa-regular fa-comment sidebar " ></i>
+                                <i id="plane" class="fa-regular fa-paper-plane sidebar"></i>
+                           </div>
+                            <div id="books">
+                                <i id="book" class="fa-regular fa-bookmark sidebar"></i>
+                            </div>
+                        </section>
+                        <div id="likes">
+                            <h6 id="like-font">30 likes</h6>
+                        </div>
+                       <div class="comment">
+                        <h6 class="comment-user">gibsonjack</h6>
+                        <p class="typed-comment">Here is a caption abut the photo. Text text text text text text text text text text text text text text text text...</p>
+                        <button class="morestuff">more</button>
+                       </div>
+                       <div class="comment">
+                            <h6 class="comment-user">Lizzie</h6>
+                            <p class="typed-comment">Here is a comment text text text text text text.</p>
+                      </div>
+                      <div class="comment">
+                        <h6 class="comment-user">vanek97</h6>
+                        <p class="typed-comment">Here is another comment text text text.</p>
+                     </div>
+                     <div>
+                        <p id="time-posted" class="typed-commet">
+                            1 DAY AGO
+                        </p>
+                     </div>
+                     <div id="end-comment"> 
+                        <section id="left-finals">
+                            <i id="smile" class="fa-regular fa-face-smile"></i>
+                            <p id="add">Add a comment...</p>
+                        </section>
+                        <section id="post-button">
+                            <button id="post-more">Post</button>
+                        </section>
+    
+                     </div>
+    
+                </article>
+                </section>
+                <section class="posts">
+            
+                    <header class="user-name-post">
+                        <h4> agolriz</h4>
+                        <i id="more" class="fa-solid fa-ellipsis"></i>
+                    </header>
+                    <article>
+                        <img class="post"src="https://picsum.photos/743/350/?random11" alt="User's post">
+                        <div id="post-body">
+                            <section id="icons">
+                                <div id="interact">
+                                    <i id="heart" class="fa-regular fa-heart sidebar" ></i>
+                                    <i id="comment" class="fa-regular fa-comment sidebar " ></i>
+                                    <i id="plane" class="fa-regular fa-paper-plane sidebar"></i>
+                               </div>
+                                <div id="books">
+                                    <i id="book" class="fa-regular fa-bookmark sidebar"></i>
+                                </div>
+                            </section>
+                            <div id="likes">
+                                <h6 id="like-font">30 likes</h6>
+                            </div>
+                           <div class="comment">
+                            <h6 class="comment-user">gibsonjack</h6>
+                            <p class="typed-comment">Here is a caption abut the photo. Text text text text text text text text text text text text text text text text...</p>
+                            <button class="morestuff">more</button>
+                           </div>
+                           <div class="comment">
+                                <h6 class="comment-user">Lizzie</h6>
+                                <p class="typed-comment">Here is a comment text text text text text text.</p>
+                          </div>
+                          <div class="comment">
+                            <h6 class="comment-user">vanek97</h6>
+                            <p class="typed-comment">Here is another comment text text text.</p>
+                         </div>
+                         <div>
+                            <p id="time-posted" class="typed-commet">
+                                1 DAY AGO
+                            </p>
+                         </div>
+                         <div id="end-comment"> 
+                            <section id="left-finals">
+                                <i id="smile" class="fa-regular fa-face-smile"></i>
+                                <p id="add">Add a comment...</p>
+                            </section>
+                            <section id="post-button">
+                                <button id="post-more">Post</button>
+                            </section>
+        
+                         </div>
+        
+                    </article>
+                    </section>
+                    <section class="posts">
+            
+                        <header class="user-name-post">
+                            <h4> agolriz</h4>
+                            <i id="more" class="fa-solid fa-ellipsis"></i>
+                        </header>
+                        <article>
+                            <img class="post"src="https://picsum.photos/743/350/?random12" alt="User's post">
+                            <div id="post-body">
+                                <section id="icons">
+                                    <div id="interact">
+                                        <i id="heart" class="fa-regular fa-heart sidebar" ></i>
+                                        <i id="comment" class="fa-regular fa-comment sidebar " ></i>
+                                        <i id="plane" class="fa-regular fa-paper-plane sidebar"></i>
+                                   </div>
+                                    <div id="books">
+                                        <i id="book" class="fa-regular fa-bookmark sidebar"></i>
+                                    </div>
+                                </section>
+                                <div id="likes">
+                                    <h6 id="like-font">30 likes</h6>
+                                </div>
+                               <div class="comment">
+                                <h6 class="comment-user">gibsonjack</h6>
+                                <p class="typed-comment">Here is a caption abut the photo. Text text text text text text text text text text text text text text text text...</p>
+                                <button class="morestuff">more</button>
+                               </div>
+                               <div class="comment">
+                                    <h6 class="comment-user">Lizzie</h6>
+                                    <p class="typed-comment">Here is a comment text text text text text text.</p>
+                              </div>
+                              <div class="comment">
+                                <h6 class="comment-user">vanek97</h6>
+                                <p class="typed-comment">Here is another comment text text text.</p>
+                             </div>
+                             <div>
+                                <p id="time-posted" class="typed-commet">
+                                    1 DAY AGO
+                                </p>
+                             </div>
+                             <div id="end-comment"> 
+                                <section id="left-finals">
+                                    <i id="smile" class="fa-regular fa-face-smile"></i>
+                                    <p id="add">Add a comment...</p>
+                                </section>
+                                <section id="post-button">
+                                    <button id="post-more">Post</button>
+                                </section>
+            
+                             </div>
+            
+                        </article>
+                        </section>
+            
+        
+    </main>
 </body>
+
 </html>
