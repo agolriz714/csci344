@@ -38,9 +38,9 @@ export default function Bookmark({token, bookmarkId, postId}){
     if(stateBookmarkId){
         return( 
             <button 
-            ariaLabel="Unbookmark this post" 
-            ariaChecked="true" 
-            ariaRoll="toggle" 
+            aria-label="Unbookmark this post" 
+            aria-checked="true" 
+            role="toggle" 
             onClick={deleteBookmark}>
                 <i className="fas fa-bookmark"></i>
             </button>
@@ -48,9 +48,9 @@ export default function Bookmark({token, bookmarkId, postId}){
     }else{
         return( 
             <button 
-            ariaLabel="Bookmark this post" 
-            ariaChecked="false" 
-            ariaRoll="toggle" 
+            aria-label="Bookmark this post" 
+            aria-checked="false" 
+            role="toggle" 
             onClick={createBookmark}>
                 <i className="far fa-bookmark"></i>
             </button>
