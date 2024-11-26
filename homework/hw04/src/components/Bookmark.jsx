@@ -24,6 +24,9 @@ export default function Bookmark({token, bookmarkId, postId}){
         console.log(responseData);
         setStateBookmarkId(responseData.id);
     }
+
+
+    
     async function deleteBookmark() {
        
          const responseData = await deleteDataFromServer(

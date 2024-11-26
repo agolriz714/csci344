@@ -1,6 +1,8 @@
 import React from "react";
 import Bookmark from "./Bookmark";
 import Like from "./Like";
+import Comments from "./Comments";
+//import AddComment from "./AddComment";
 
 export default function Post({postData,token}) {
 console.log(postData);
@@ -14,7 +16,9 @@ console.log(postData);
                 <h3 className="text-lg font-Comfortaa font-bold">
                     {postData.user.username}
                 </h3>
-                <button className="icon-button"><i className="fas fa-ellipsis-h"></i></button>
+                <button aria-label="More options for post" className="icon-button">
+                    <i className="fas fa-ellipsis-h"></i>
+                    </button>
             </div>
             {/* Image */}
             <img src={postData.image_url} 
@@ -28,11 +32,15 @@ console.log(postData);
                         {/* Buttons */}
 
                         
-                        <Like likeId={postData.current_user_like_id}/>
-                        <button>
+                        <Like 
+                        token={token}
+                        likeId={postData.current_user_like_id}
+                        postId={postData.id}
+                        />
+                        <button aria-label="Add comment">
                             <i className="far fa-comment"></i>
                         </button>
-                        <button>
+                        <button aria-label="Send post to others/share">
                             <i className="far fa-paper-plane"></i>
                         </button>
                     </div>
@@ -54,15 +62,8 @@ console.log(postData);
                     </p>
                 </div>
                 {/* Comments */}
-                <p className="text-sm mb-3 flex gap-2">
-
-                    <strong>lizzie</strong>
-                    Here is a comment text text text text text text text text.
-                </p>
-                <p className="flex gap-2 text-sm mb-3">
-                    <strong>vanek97</strong>
-                    Here is another comment text text text.
-                </p>
+                <Comments token={token} postId={postData.id} /> 
+               
                 {/* Date from when posted */}
                 <p className="uppercase text-gray-500 text-xs">
                     {postData.display_time}

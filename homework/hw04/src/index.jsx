@@ -12,12 +12,11 @@ async function main() {
     root.render(<App token={token} username={username} />);
 }
 /*
-Todo: Profile
-Stories
-Suggestions
+Todo: 
+aira/ acces stuffs
 For posts:
     Comments
-
+    
 
 
 

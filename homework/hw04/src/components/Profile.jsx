@@ -1,39 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { getDataFromServer } from "../server-requests";
 
+export default function Profile({ token, profileData}) {
+    const [profile, setProfile] = useState(null);
 
-export default function Profile({ token,profileData }) {
-    console.log(profileData);
-    console.log("Data here");
+
     async function getProfile() {
-       const [profile, setProfile] = useState([]);
-        const data = await getDataFromServer(token, "/api/profile")
-    
-        console.log(data);
+
+        const data = await getDataFromServer(token, "/api/profile");
     
         setProfile(data);
         
     }
-    return (
+    useEffect(() => {
+     getProfile();
+    }, []);
+    
+
+    return(profile&&
         <header className="flex gap-4 items-center">
-            <img src="https://picsum.photos/60/60?q=11" className="rounded-full w-16" />
-            <h2 className="font-Comfortaa font-bold text-2xl">profileData.user.usernae</h2>
-        </header>
+                <img src={profile.thumb_url} alt="Your profile pic" className="rounded-full w-16" />
+                <h2 className="font-Comfortaa font-bold text-2xl">{profile.username}</h2>
+            </header>
     );
 }
-useEffect(() => {
-    getProfile();
-}, []);
-console.log(profile);
-
-function outputProfile(profileObj){
-   // return<Profile token={token} key={postObj.id} postData={postObj}/>;
-}
-// return (
-// <div>
-//     {
-//         profile.map(outputProfile)
-//     }
-// </div>
-// )
 
