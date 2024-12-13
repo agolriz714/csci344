@@ -5,6 +5,7 @@ from flask_restful import Resource
 
 from models import db
 from models.comment import Comment
+from models.post import Post
 from views import can_view_post
 
 
@@ -30,6 +31,13 @@ class CommentListEndpoint(Resource):
                 mimetype="application/json",
                 status=400,
             )
+        can_view = can_view_post(post_id,self.current_user)
+        if not can_view:
+                return Response(
+                    json.dumps({"Message": "Not auth"}),
+                    mimetype="application/json",
+                    status=404,
+            )  
         
         user_id = self.current_user.id
         text = data.get("text")
@@ -73,17 +81,16 @@ class CommentDetailEndpoint(Resource):
         self.current_user = current_user
 
     def delete(self, id):
-        
         print(id)
-        
-        can_view= can_view_post(id, self.current_user)
-        if(can_view):
-            if not id:
+
+        if not id:
                 return Response(
                     json.dumps({"Message":f"User id={id} does not exist"}),
                     mimetype="application/json",
                     status=404,
                 )
+        can_view= can_view_post(id,self.current_user)
+        if(can_view):
             Comment.query.filter_by(id=id).delete()
             db.session.commit()
             return Response(

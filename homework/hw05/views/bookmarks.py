@@ -5,6 +5,7 @@ from flask_restful import Resource
 
 from models import db
 from models.bookmark import Bookmark
+from models.post import Post
 from views import can_view_post
 
 
@@ -15,7 +16,7 @@ class BookmarksListEndpoint(Resource):
 
     def get(self):
         bookmark = Bookmark.query.filter(Bookmark.user_id == self.current_user.id)
-        data = [item.to_dict()for item in bookmark.all()]
+        data = [item.to_dict() for item in bookmark.all()]
         print(data)
         return Response(
             json.dumps(data),
@@ -24,7 +25,13 @@ class BookmarksListEndpoint(Resource):
         )
 
     def post(self):
-        
+        """
+        +first grab post id
+       +then check is id real
+        does user have access to view post
+        has user already bookmarked
+        if all true, create bookmark
+        """
         #post a bookmark, will need add functions
         data = request.json
         print(data)
@@ -45,17 +52,22 @@ class BookmarksListEndpoint(Resource):
         user_id = self.current_user.id
        
        
-        post = Bookmark.query.filter_by(id=post_id).first()
+        post = Post.query.get(post_id)
         if not post:
             return Response(
                 json.dumps({"Message": f"Post id {post_id} does not exist"}),
                 mimetype="application/json",
                 status=404,
             )
-        
-       
+        can_view = can_view_post(post_id,self.current_user)
+        if not can_view:
+                  return Response(
+                json.dumps({"Message": "Not auth"}),
+                mimetype="application/json",
+                status=404,
+            )  
       
-        existing_bookmark = Bookmark.query.filter_by(post_id=post_id).first()
+        existing_bookmark = Bookmark.query.filter_by(post_id=post_id).filter_by(user_id=self.current_user.id).first()
 
         if existing_bookmark:
             return Response(

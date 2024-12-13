@@ -5,6 +5,7 @@ from flask_restful import Resource
 
 from models import db
 from models.like_post import LikePost
+from models.post import Post
 from views import can_view_post
 
 
@@ -38,7 +39,13 @@ class PostLikesListEndpoint(Resource):
                 mimetype="application/json",
                 status=404,
             )
-        
+       can_view = can_view_post(post_id,self.current_user)
+       if not can_view:
+                return Response(
+                json.dumps({"Message": "Not auth"}),
+                mimetype="application/json",
+                status=404,
+            )  
        
       
        existing_like = LikePost.query.filter_by(post_id=post_id).first()

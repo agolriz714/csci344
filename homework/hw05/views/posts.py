@@ -66,7 +66,10 @@ class PostListEndpoint(Resource):
             caption=caption,
             alt_text=alt_text
         )
-       
+        db.session.add(new_post)
+        db.session.commit()
+        print(self.current_user)
+        print(new_post)
         #validate data
         #insert into the database, return newly created resource
         #back to the user with a 201 code
@@ -91,16 +94,16 @@ class PostDetailEndpoint(Resource):
             post = Post.query.filter_by(id=id).first()
         #should update the post
             data = request.json
-            if "image_url" in data and data["image_url"] is not None:
-                post.image_url= data["image_url"]
-            if "caption" in data and data["caption"] is not None:
-                post.caption= data["caption"]
-            if "alt_text" in data and data["alt_txt"] is not None:
-                post.alt_text= data["alt_text"]
+            if "image_url" in data and data.get("image_url") is not None:
+                post.image_url= data.get("image_url")
+            if "caption" in data and data.get("caption") is not None:
+                post.caption= data.get("caption")
+            if "alt_text" in data and data.get("alt_text") is not None:
+                post.alt_text= data.get("alt_text")
 
             db.session.commit()
 
-            return Response(json.dumps({data}), mimetype="application/json", status=200)
+            return Response(json.dumps(post.to_dict(user=self.current_user)), mimetype="application/json", status=200)
         else:
             return Response(
                 json.dumps({"message": f"Post id={id} not found"}),

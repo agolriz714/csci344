@@ -44,6 +44,7 @@ class Post(db.Model):
         return "<Post={0} by User={1}>".format(self.id, self.user_id)
 
     def to_dict(self, include_comments: bool = True, user=None):
+        print(user)
         d = {
             "id": self.id,
             "image_url": self.image_url,
