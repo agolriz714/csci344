@@ -1,6 +1,29 @@
 // 1. Create your businessToHTML function here:
 
 function businessToHTML(businessObj){
+    //want to return item with htmlm tailwind duh.
+    function checkPrice() {
+        if(businessObj.price){
+            return businessObj.price;
+        }
+        return "";
+    }
+
+    return`<div> class="p-4 bg-black-100">
+            <h1 class = text-6xl >
+                ${businessObj.name}
+            </h1>
+            <img src="${businessObj.image_url}" alt="Resturant picture" >
+            </section>
+                <p> ${businessObj.display_address}</p>
+                
+                <p>  ${businessObj.rating}</p>
+                <p>    ${checkPrice()} </p>
+                
+                <p>  ${businessObj.review_count} </p>
+            </section>
+        </div>
+        `;
     
 }
 
@@ -12,7 +35,7 @@ function businessToHTML(businessObj){
 
 // 2. When you're done, uncomment the test code below and preview index.html in your browser:
 
-/*const businessObjPriceDefined = {
+const businessObjPriceDefined = {
     id: "d8Vg0DxRY-s2a8xnZ6ratw",
     name: "Chestnut",
     rating: 4.5,
@@ -38,4 +61,4 @@ const businessObjPriceNotDefined = {
 
 console.log("HTML representation of a business:", businessToHTML(businessObjPriceDefined));
 console.log("HTML representation of a business (no price):", businessToHTML(businessObjPriceNotDefined));
-*/
+
